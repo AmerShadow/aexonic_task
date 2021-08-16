@@ -21,7 +21,7 @@ Auth::routes();
 
 
 
-Route::resource('users', 'AdminRegistercontroller');
+Route::resource('users', 'AdminRegisterController');
 Route::get('users/delete/{id}', 'AdminRegisterController@delete')->name('users.delete');
 Route::get('users/status/{id}', 'AdminRegisterController@changeStatus')->name('users.status');
 
