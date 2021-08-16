@@ -43,14 +43,17 @@ class UserController extends Controller
     }
 
 
-    public function deactivate()
+    public function deactivate(Request $request)
     {
         $user=Auth::user();
         $user->status=false;
 
         $user->update();
 
-        Auth::logout();
+        Auth::guard('user')->logout();
+
+        $request->session()->invalidate();
+
 
         return view('message')->with('message','Your account deactivated successfully');
 
