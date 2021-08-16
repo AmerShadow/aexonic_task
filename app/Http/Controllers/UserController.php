@@ -50,7 +50,7 @@ class UserController extends Controller
 
         $user->update();
 
-        Auth::guard('user')->logout();
+        Auth::logout();
 
         $request->session()->invalidate();
 
